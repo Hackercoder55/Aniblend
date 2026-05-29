@@ -2,6 +2,31 @@
    AniBlend - JavaScript Interactions & Animations
    ============================================= */
 
+// ============ FAQ ACCORDION ============
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-answer').classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (if wasn't open)
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+
 // ============ LOADER ============
 (function initLoader() {
   const loader = document.getElementById('loader');
