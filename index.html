@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AniBlend - Where Animation Meets Imagination. Premium animation studio crafting breathtaking visuals, motion graphics, and digital experiences." />
+  <title>AniBlend | Animation Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="loader-text-ani">Ani</span><span class="loader-text-blend">Blend</span>
+      </div>
+      <div class="loader-bar-container">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-percent" id="loader-percent">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="logo.png" alt="AniBlend Logo" class="logo-img" />
+        <span class="logo-text">Ani<span class="logo-accent">Blend</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas class="hero-canvas" id="hero-canvas"></canvas>
+    <div class="hero-bg-image"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Creative Animation Studio</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Where Animation</span>
+        <span class="title-line gradient-text">Meets</span>
+        <span class="title-line">Imagination</span>
+      </h1>
+      <p class="hero-subtitle">
+        We craft breathtaking animations, motion graphics & immersive digital experiences that elevate your brand to the next dimension.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary" id="hero-cta">
+          <span>Explore Our Work</span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#about" class="btn-ghost">
+          <span class="play-icon">▶</span>
+          <span>Watch Showreel</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="250">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Projects Done</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="80">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span>Scroll Down</span>
+      </div>
+    </div>
+    <!-- Floating 3D shapes -->
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </section>
+
+  <!-- Marquee Banner -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Motion Graphics</span><span class="marquee-dot">●</span>
+        <span>2D Animation</span><span class="marquee-dot">●</span>
+        <span>3D Visualization</span><span class="marquee-dot">●</span>
+        <span>UI/UX Animation</span><span class="marquee-dot">●</span>
+        <span>Brand Identity</span><span class="marquee-dot">●</span>
+        <span>Visual Effects</span><span class="marquee-dot">●</span>
+        <span>Explainer Videos</span><span class="marquee-dot">●</span>
+        <span>Product Animation</span><span class="marquee-dot">●</span>
+        <!-- Duplicate -->
+        <span>Motion Graphics</span><span class="marquee-dot">●</span>
+        <span>2D Animation</span><span class="marquee-dot">●</span>
+        <span>3D Visualization</span><span class="marquee-dot">●</span>
+        <span>UI/UX Animation</span><span class="marquee-dot">●</span>
+        <span>Brand Identity</span><span class="marquee-dot">●</span>
+        <span>Visual Effects</span><span class="marquee-dot">●</span>
+        <span>Explainer Videos</span><span class="marquee-dot">●</span>
+        <span>Product Animation</span><span class="marquee-dot">●</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card-main">
+            <div class="about-orb"></div>
+            <div class="about-inner-card">
+              <div class="about-icon-row">
+                <div class="tech-badge">After Effects</div>
+                <div class="tech-badge">Blender</div>
+                <div class="tech-badge">Cinema 4D</div>
+              </div>
+              <div class="about-animation-preview">
+                <div class="morph-shape"></div>
+              </div>
+              <div class="about-rating">
+                <div class="stars">★★★★★</div>
+                <span>4.9/5 Client Rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-card-float card-float-1">
+            <span class="float-emoji">🎨</span>
+            <div>
+              <div class="float-title">Creative</div>
+              <div class="float-sub">Beyond limits</div>
+            </div>
+          </div>
+          <div class="about-card-float card-float-2">
+            <span class="float-emoji">⚡</span>
+            <div>
+              <div class="float-title">Fast</div>
+              <div class="float-sub">On-time delivery</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-tag">About AniBlend</div>
+          <h2 class="section-title">We Don't Just Animate — <span class="gradient-text">We Tell Stories</span></h2>
+          <p class="about-desc">AniBlend is a forward-thinking animation studio where creativity has no ceiling. We blend cutting-edge technology with artistic vision to produce animations that don't just move — they breathe life into your brand.</p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Pixel-Perfect Precision</strong>
+                <p>Every frame crafted with obsessive attention to detail</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Lightning Fast Delivery</strong>
+                <p>Quality work without compromising your deadlines</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Unlimited Revisions</strong>
+                <p>We iterate until you absolutely love it</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary">Work With Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-title">Services That <span class="gradient-text">Set You Apart</span></h2>
+        <p class="section-subtitle">From concept to final render — we handle every frame with artistry and precision.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-index="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="28" stroke="url(#g1)" stroke-width="1.5"/>
+              <path d="M20 38L30 22L40 38" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 33h12" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>2D Animation</h3>
+          <p>Expressive character animation, explainer videos, and 2D motion that connects emotionally with your audience.</p>
+          <div class="service-tags">
+            <span>Character Rigs</span><span>Frame-by-Frame</span><span>Motion Paths</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card featured" data-index="1">
+          <div class="service-badge">Most Popular</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="50" height="50" rx="6" stroke="url(#g2)" stroke-width="1.5"/>
+              <path d="M15 30l10 10 20-20" stroke="url(#g2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#ec4899"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>3D Visualization</h3>
+          <p>Photorealistic 3D renders, product animations, and architectural visualizations that leave jaws dropped.</p>
+          <div class="service-tags">
+            <span>Product Renders</span><span>Arch Viz</span><span>VFX</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card" data-index="2">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="30,5 55,20 55,40 30,55 5,40 5,20" stroke="url(#g3)" stroke-width="1.5" fill="none"/>
+              <circle cx="30" cy="30" r="8" stroke="url(#g3)" stroke-width="2"/>
+              <defs><linearGradient id="g3" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#06b6d4"/><stop offset="1" stop-color="#10b981"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Motion Graphics</h3>
+          <p>Dynamic title sequences, logo animations, and motion design systems that give your brand a voice in motion.</p>
+          <div class="service-tags">
+            <span>Logo Reveal</span><span>Kinetic Type</span><span>Broadcast</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card" data-index="3">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="12" width="44" height="36" rx="4" stroke="url(#g4)" stroke-width="1.5"/>
+              <circle cx="30" cy="30" r="8" stroke="url(#g4)" stroke-width="2"/>
+              <path d="M27 27l8 3-8 3V27z" fill="url(#g4)"/>
+              <defs><linearGradient id="g4" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Explainer Videos</h3>
+          <p>Crystal-clear animated explainers that break down complex ideas into compelling, shareable stories.</p>
+          <div class="service-tags">
+            <span>SaaS</span><span>Product</span><span>Education</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card" data-index="4">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="20" stroke="url(#g5)" stroke-width="1.5"/>
+              <path d="M20 30c0-5.52 4.48-10 10-10s10 4.48 10 10" stroke="url(#g5)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M30 40v-5M27 37l3 3 3-3" stroke="url(#g5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="g5" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>UI/UX Animation</h3>
+          <p>Micro-interactions, prototype animations, and interactive UI motion that make digital products feel alive.</p>
+          <div class="service-tags">
+            <span>Micro-interactions</span><span>Lottie</span><span>Prototypes</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card" data-index="5">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 50L30 10L50 50" stroke="url(#g6)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M18 36h24" stroke="url(#g6)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="30" cy="10" r="4" fill="url(#g6)" opacity="0.6"/>
+              <defs><linearGradient id="g6" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Brand Animation</h3>
+          <p>Complete animated brand identity packages — from logo reveals to brand guidelines in motion.</p>
+          <div class="service-tags">
+            <span>Brand Kit</span><span>Logo Animation</span><span>Style Guide</span>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work / Portfolio Section -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Portfolio</div>
+        <h2 class="section-title">Work That <span class="gradient-text">Speaks Volumes</span></h2>
+        <p class="section-subtitle">A glimpse into our universe of crafted animations and digital storytelling.</p>
+      </div>
+      <div class="work-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="2d">2D</button>
+        <button class="filter-btn" data-filter="3d">3D</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
+        <button class="filter-btn" data-filter="brand">Brand</button>
+      </div>
+      <div class="work-grid" id="work-grid">
+        <div class="work-item" data-category="3d">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #1a0533 0%, #4c1d95 50%, #7c3aed 100%);">
+            <div class="work-animation wa-1">
+              <div class="wa-sphere"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">3D Visualization</span>
+            <h4>Cosmic Product Reveal</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+        <div class="work-item large" data-category="motion">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 50%, #06b6d4 100%);">
+            <div class="work-animation wa-2">
+              <div class="wa-ring wa-ring-1"></div>
+              <div class="wa-ring wa-ring-2"></div>
+              <div class="wa-ring wa-ring-3"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">Motion Graphics</span>
+            <h4>TechFlow Brand Intro</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="2d">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #330033 0%, #7c2d12 50%, #ec4899 100%);">
+            <div class="work-animation wa-3">
+              <div class="wa-character"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">2D Character</span>
+            <h4>NovaPay Explainer</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="brand">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #052e16 0%, #065f46 50%, #10b981 100%);">
+            <div class="work-animation wa-4">
+              <div class="wa-logo-anim"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">Brand Animation</span>
+            <h4>GreenLeaf Identity</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+        <div class="work-item large" data-category="3d">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #1c1c2e 0%, #6d28d9 50%, #a855f7 100%);">
+            <div class="work-animation wa-5">
+              <div class="wa-cube"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">3D Animation</span>
+            <h4>Quantum Architecture</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+        <div class="work-item" data-category="motion">
+          <div class="work-thumb" style="background: linear-gradient(135deg, #1a1a00 0%, #854d0e 50%, #f59e0b 100%);">
+            <div class="work-animation wa-6">
+              <div class="wa-particle-field"></div>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-cat">Motion Design</span>
+            <h4>SolarX Title Sequence</h4>
+          </div>
+          <div class="work-overlay">
+            <span>View Project</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">How We Work</div>
+        <h2 class="section-title">Our Creative <span class="gradient-text">Process</span></h2>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step" data-step="1">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Discovery</h3>
+            <p>We dive deep into your brand, goals, and vision to understand what story needs to be told.</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step" data-step="2">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Concept</h3>
+            <p>Our creative team develops storyboards, mood boards, and animation concepts for your review.</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step" data-step="3">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Creation</h3>
+            <p>Magic happens here. We animate, render, and polish every frame to perfection.</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step" data-step="4">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Deliver</h3>
+            <p>Final files delivered in all formats you need, ready to dazzle your audience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Client Love</div>
+        <h2 class="section-title">What Our Clients <span class="gradient-text">Say</span></h2>
+      </div>
+      <div class="testimonials-slider" id="testimonials-slider">
+        <div class="testimonial-card active">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"AniBlend transformed our product launch completely. The animations were beyond anything we imagined. Our conversion rates jumped 40% after using their explainer video!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#7c3aed,#ec4899)">RK</div>
+            <div>
+              <strong>Rahul Kumar</strong>
+              <span>CEO, TechVision India</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Working with AniBlend was pure joy. They understood our vision perfectly and delivered a 3D brand animation that made our investors jaw-drop in the pitch meeting!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#06b6d4,#10b981)">PS</div>
+            <div>
+              <strong>Priya Sharma</strong>
+              <span>Founder, GreenLeaf Ventures</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The quality and speed of AniBlend is unmatched. Our UI animations now feel premium and our users love the micro-interactions. Absolute professionals!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg,#f59e0b,#ec4899)">AM</div>
+            <div>
+              <strong>Arjun Mehta</strong>
+              <span>Product Designer, NovaPay</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-dots" id="slider-dots">
+        <button class="dot active" data-index="0"></button>
+        <button class="dot" data-index="1"></button>
+        <button class="dot" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-tag">Get In Touch</div>
+          <h2 class="section-title">Let's Create Something <span class="gradient-text">Extraordinary</span></h2>
+          <p>Ready to elevate your brand with stunning animations? Drop us a message and let's start the conversation.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <strong>Email Us</strong>
+                <span>hello@aniblend.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📱</div>
+              <div>
+                <strong>Call Us</strong>
+                <span>+91 98765 43210</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div>
+                <strong>Visit Us</strong>
+                <span>Mumbai, India</span>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M7 10v7M7 7v.5M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Behance">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M7 12h4a2 2 0 000-4H7v8h4.5a2.5 2.5 0 000-5H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 10h5M14 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>2D Animation</option>
+                <option>3D Visualization</option>
+                <option>Motion Graphics</option>
+                <option>Explainer Video</option>
+                <option>UI/UX Animation</option>
+                <option>Brand Animation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, and timeline..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full" id="submit-btn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-text">Ani<span class="logo-accent">Blend</span></span>
+          </a>
+          <p>Where animation meets imagination. Creating visual experiences that move people.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#work">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#">2D Animation</a>
+            <a href="#">3D Visualization</a>
+            <a href="#">Motion Graphics</a>
+            <a href="#">Explainer Videos</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Behance</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 AniBlend. All rights reserved. Crafted with ❤️ and ✨</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
