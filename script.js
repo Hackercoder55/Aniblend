@@ -1,5 +1,143 @@
 /* AniBlend - Neon Cyberpunk JS */
 
+// ── PAYOUT CALCULATOR ─────────────────────────
+(function initCalculator() {
+  const BASE_RATE = 4000; // ₹ per minute
+
+  // State
+  let typeMult  = 1;
+  let typeLabel = '2D Animation';
+  let qualMult  = 1;
+  let qualLabel = 'Standard';
+  let durSecs   = 60;
+  let revisions = 2;
+
+  // Elements
+  const priceNum    = document.getElementById('price-num');
+  const gstTotal    = document.getElementById('gst-total');
+  const durBadge    = document.getElementById('dur-badge');
+  const revBadge    = document.getElementById('rev-badge');
+  const resDur      = document.getElementById('res-dur');
+  const resType     = document.getElementById('res-type');
+  const resQuality  = document.getElementById('res-quality');
+  const resRev      = document.getElementById('res-rev');
+  const delivNote   = document.getElementById('delivery-note');
+  const durSlider   = document.getElementById('dur-slider');
+  const revSlider   = document.getElementById('rev-slider');
+
+  if (!priceNum) return; // calculator not on page
+
+  // Animated number counter
+  let currentDisplayed = 4000;
+  let rafId = null;
+  function animateTo(target) {
+    if (rafId) cancelAnimationFrame(rafId);
+    priceNum.classList.add('updating');
+    setTimeout(() => priceNum.classList.remove('updating'), 200);
+    const start = currentDisplayed;
+    const diff  = target - start;
+    const dur   = 500;
+    const t0    = performance.now();
+    function step(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(start + diff * ease);
+      currentDisplayed = val;
+      priceNum.textContent = val.toLocaleString('en-IN');
+      if (p < 1) rafId = requestAnimationFrame(step);
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  function calcDelivery(secs, qMult) {
+    const mins = secs / 60;
+    let base = Math.ceil(mins * 3); // ~3 days per minute base
+    base = Math.max(3, Math.min(base, 30));
+    if (qMult >= 1.7) base = Math.ceil(base * 1.6);
+    else if (qMult >= 1.3) base = Math.ceil(base * 1.25);
+    return `Delivery in ${base}–${base + 5} business days`;
+  }
+
+  function update() {
+    const mins  = durSecs / 60;
+    const raw   = mins * BASE_RATE * typeMult * qualMult;
+    const total = Math.round(raw / 100) * 100; // round to nearest 100
+    const gst   = Math.round(total * 1.18);
+
+    // Format duration label
+    const m = Math.floor(durSecs / 60);
+    const s = durSecs % 60;
+    const durLabel = m > 0 ? (s > 0 ? `${m} min ${s} sec` : `${m} min`) : `${s} sec`;
+
+    // Update badges
+    durBadge.textContent  = durSecs >= 60 ? `${m} min${s ? ' ' + s + 's' : ''}` : `${durSecs} sec`;
+    revBadge.textContent  = revisions === 0 ? 'No revisions' : revisions === 1 ? '1 revision' : `${revisions} revisions`;
+
+    // Update breakdown
+    resDur.textContent     = durLabel;
+    resType.textContent    = typeLabel;
+    resQuality.textContent = qualLabel;
+    resRev.textContent     = revisions === 0 ? 'None' : `${revisions} included`;
+    delivNote.textContent  = calcDelivery(durSecs, qualMult);
+
+    // Animate price
+    animateTo(total);
+    gstTotal.textContent = '₹' + gst.toLocaleString('en-IN');
+
+    // Update slider fill
+    updateSliderFill(durSlider, 'dur-fill');
+    updateSliderFill(revSlider, 'rev-fill');
+  }
+
+  function updateSliderFill(slider, fillId) {
+    const fill = document.getElementById(fillId);
+    if (!fill || !slider) return;
+    const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(90deg, #9d00ff ${pct}%, rgba(255,255,255,0.08) ${pct}%)`;
+  }
+
+  // Type buttons
+  document.querySelectorAll('.calc-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.calc-opt').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      typeMult  = parseFloat(btn.dataset.mult);
+      typeLabel = btn.dataset.type;
+      update();
+    });
+  });
+
+  // Quality buttons
+  document.querySelectorAll('.qual-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.qual-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      qualMult  = parseFloat(btn.dataset.qmult);
+      qualLabel = btn.dataset.qlabel;
+      update();
+    });
+  });
+
+  // Duration slider
+  if (durSlider) {
+    durSlider.addEventListener('input', () => {
+      durSecs = parseInt(durSlider.value);
+      update();
+    });
+  }
+
+  // Revisions slider
+  if (revSlider) {
+    revSlider.addEventListener('input', () => {
+      revisions = parseInt(revSlider.value);
+      update();
+    });
+  }
+
+  // Init
+  update();
+})();
+
 // ── FAQ ACCORDION ──────────────────────────────
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
