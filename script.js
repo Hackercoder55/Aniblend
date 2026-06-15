@@ -80,6 +80,11 @@
     resRev.textContent     = revisions === 0 ? 'None' : `${revisions} included`;
     delivNote.textContent  = calcDelivery(durSecs, qualMult);
 
+    const animElem = document.getElementById('res-anim');
+    const lightElem = document.getElementById('res-light');
+    if (animElem) animElem.textContent = '₹' + Math.round(2500 * typeMult * qualMult).toLocaleString('en-IN') + ' / min';
+    if (lightElem) lightElem.textContent = '₹' + Math.round(1500 * typeMult * qualMult).toLocaleString('en-IN') + ' / min';
+
     // Animate price
     animateTo(total);
     gstTotal.textContent = '₹' + gst.toLocaleString('en-IN');
