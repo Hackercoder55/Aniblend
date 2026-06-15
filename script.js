@@ -59,8 +59,23 @@
   }
 
   function update() {
+    let currentBaseRate = BASE_RATE;
+    let roleLabel = 'Base Rate';
+    
+    const empIdElem = document.getElementById('emp-id');
+    if (empIdElem && empIdElem.value) {
+      const val = empIdElem.value.toUpperCase();
+      if (val.includes('A')) {
+        currentBaseRate = 2500;
+        roleLabel = 'Animator Rate';
+      } else if (val.includes('L')) {
+        currentBaseRate = 1500;
+        roleLabel = 'Lighting Rate';
+      }
+    }
+
     const mins  = durSecs / 60;
-    const raw   = mins * BASE_RATE * typeMult * qualMult;
+    const raw   = mins * currentBaseRate * typeMult * qualMult;
     const total = Math.round(raw / 100) * 100; // round to nearest 100
     const gst   = Math.round(total * 1.18);
 
@@ -80,10 +95,10 @@
     resRev.textContent     = revisions === 0 ? 'None' : `${revisions} included`;
     delivNote.textContent  = calcDelivery(durSecs, qualMult);
 
-    const animElem = document.getElementById('res-anim');
-    const lightElem = document.getElementById('res-light');
-    if (animElem) animElem.textContent = '₹' + Math.round(2500 * typeMult * qualMult).toLocaleString('en-IN') + ' / min';
-    if (lightElem) lightElem.textContent = '₹' + Math.round(1500 * typeMult * qualMult).toLocaleString('en-IN') + ' / min';
+    const roleLabelElem = document.getElementById('res-role-label');
+    const roleRateElem  = document.getElementById('res-role-rate');
+    if (roleLabelElem) roleLabelElem.textContent = roleLabel;
+    if (roleRateElem) roleRateElem.textContent = '₹' + Math.round(currentBaseRate * typeMult * qualMult).toLocaleString('en-IN') + ' / min';
 
     // Animate price
     animateTo(total);
@@ -137,6 +152,12 @@
       revisions = parseInt(revSlider.value);
       update();
     });
+  }
+
+  // Emp ID input
+  const empIdElem = document.getElementById('emp-id');
+  if (empIdElem) {
+    empIdElem.addEventListener('input', update);
   }
 
   // Init
