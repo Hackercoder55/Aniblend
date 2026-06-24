@@ -3,277 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>We Are Hiring — AniBlend Studio</title>
-  <meta name="description" content="AniBlend Studio is hiring a 3D Generalist. Apply now if you know Maya, ZBrush, Blender, Substance Painter, or Unreal Engine." />
+
+  <!-- SEO -->
+  <title>We Are Hiring — 3D Generalist | AniBlend Studio Delhi</title>
+  <meta name="description" content="AniBlend Studio is hiring a 3D Generalist in Delhi. Must know Maya, ZBrush, Blender, Substance Painter & Unreal Engine. Drop your CV at business@aniblend.com." />
+  <meta name="keywords" content="3D generalist job Delhi, animation studio hiring, Maya ZBrush Blender job India, AniBlend Studio careers, 3D artist job Delhi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="AniBlend Studio" />
   <link rel="canonical" href="https://hackercoder55.github.io/Aniblend/" />
   <link rel="icon" href="logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="We Are Hiring — 3D Generalist | AniBlend Studio" />
+  <meta property="og:description" content="AniBlend Studio is looking for a talented 3D Generalist. Apply now!" />
+  <meta property="og:url" content="https://hackercoder55.github.io/Aniblend/" />
+  <meta property="og:image" content="https://hackercoder55.github.io/Aniblend/logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="We Are Hiring — 3D Generalist | AniBlend Studio" />
+  <meta name="twitter:description" content="AniBlend Studio is looking for a talented 3D Generalist. Apply now!" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "3D Generalist",
+    "description": "AniBlend Studio is hiring a 3D Generalist proficient in Maya, ZBrush, Blender, Substance Painter and Unreal Engine.",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "AniBlend Studio",
+      "sameAs": "https://hackercoder55.github.io/Aniblend/",
+      "logo": "https://hackercoder55.github.io/Aniblend/logo.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Delhi",
+        "addressCountry": "IN"
+      }
+    },
+    "employmentType": "FULL_TIME",
+    "datePosted": "2026-06-25"
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --navy:   #041a3a;
-      --navy2:  #062a5a;
-      --blue:   #0a4a8a;
-      --accent: #00c8ff;
-      --white:  #ffffff;
-      --off:    #b8d0f0;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at 50% 0%, var(--navy2) 0%, var(--navy) 60%);
+      background: radial-gradient(ellipse at 50% -10%, #0d3a6e 0%, #041a3a 55%, #020e22 100%);
       min-height: 100vh;
-      color: var(--white);
+      color: #fff;
     }
 
-    /* ── HEADER ── */
+    /* ── HEADER / LOGO ── */
     .site-header {
       text-align: center;
-      padding: 36px 20px 0;
+      padding: 40px 20px 0;
     }
-    .site-header img.logo {
-      height: 54px;
+    .logo-img {
+      height: 90px;
+      width: auto;
+      max-width: 320px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-    }
-    .studio-label {
-      letter-spacing: .35em;
-      font-size: .72rem;
-      color: var(--off);
-      margin-top: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .studio-label::before,
-    .studio-label::after {
-      content: '';
-      flex: 1;
-      max-width: 40px;
-      height: 1px;
-      background: var(--off);
-      opacity: .5;
+      /* logo has dark bg — blend so only white text shows on page bg */
+      mix-blend-mode: lighten;
     }
 
-    /* ── HERO TEXT ── */
+    /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 24px 20px 0;
+      padding: 20px 20px 0;
+      line-height: 1;
     }
     .we-are {
       font-family: 'Dancing Script', cursive;
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      color: var(--white);
-      line-height: 1;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      color: #fff;
       display: block;
+      margin-bottom: 2px;
     }
     .hiring-text {
-      font-size: clamp(4.5rem, 18vw, 9rem);
+      font-size: clamp(5rem, 20vw, 10rem);
       font-weight: 900;
-      line-height: .9;
-      color: var(--white);
+      color: #fff;
       letter-spacing: -.02em;
       display: block;
+      line-height: .88;
     }
 
     /* ── ROLE CARD ── */
     .role-card {
-      margin: 24px auto 0;
-      max-width: 520px;
-      border: 2px dashed rgba(255,255,255,.35);
-      border-radius: 14px;
-      padding: 18px 28px 22px;
+      margin: 28px auto 0;
+      max-width: 580px;
+      border: 2px dashed rgba(255,255,255,.3);
+      border-radius: 16px;
+      padding: 22px 32px 26px;
       text-align: center;
     }
     .role-title {
-      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-size: clamp(1.4rem, 4.5vw, 2.1rem);
       font-weight: 800;
       letter-spacing: .06em;
-      color: var(--white);
     }
     .role-sub {
-      font-size: .72rem;
-      letter-spacing: .2em;
-      color: var(--off);
-      margin: 6px 0 16px;
+      font-size: .7rem;
+      letter-spacing: .22em;
+      color: #a8c8f0;
+      margin: 8px 0 20px;
     }
 
-    /* software icons */
+    /* ── SOFTWARE ICONS ── */
     .software-list {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
     }
     .sw-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      width: 68px;
+      gap: 7px;
+      width: 72px;
     }
     .sw-icon {
-      width: 52px;
-      height: 52px;
+      width: 58px;
+      height: 58px;
       border-radius: 14px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 900;
-      overflow: hidden;
+      flex-shrink: 0;
     }
+    .sw-icon svg { width: 58px; height: 58px; }
     .sw-label {
-      font-size: .6rem;
-      color: var(--off);
+      font-size: .58rem;
+      color: #a8c8f0;
       text-align: center;
-      line-height: 1.2;
-    }
-
-    /* individual brand colours */
-    .sw-maya       { background: #00a5c8; }
-    .sw-zbrush     { background: #2b2b2b; }
-    .sw-blender    { background: #e87d0d; }
-    .sw-substance  { background: #d14111; }
-    .sw-unreal     { background: #1a1a1a; }
-
-    .sw-icon svg   { width: 36px; height: 36px; }
-
-    /* ── DESK IMAGE ── */
-    .desk-wrap {
-      max-width: 680px;
-      margin: 28px auto 0;
-      padding: 0 20px;
-      position: relative;
-    }
-    .desk-wrap img {
-      width: 100%;
-      border-radius: 16px;
-      display: block;
-      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: .03em;
     }
 
     /* ── APPLY BUTTON ── */
     .apply-wrap {
       text-align: center;
-      margin: 32px 20px 0;
+      margin: 36px 20px 0;
     }
     .apply-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(135deg, #0088cc 0%, #00c8ff 100%);
+      background: linear-gradient(135deg, #0070bb 0%, #00b8e6 100%);
       color: #fff;
       font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      padding: 16px 42px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      padding: 18px 52px;
       border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 8px 32px rgba(0,200,255,.35);
-      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 32px rgba(0,180,230,.4);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
     .apply-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 42px rgba(0,200,255,.5);
+      box-shadow: 0 16px 48px rgba(0,180,230,.55);
     }
-    .apply-btn svg { width: 20px; height: 20px; fill: #fff; }
+    .apply-btn svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
 
     /* ── BOTTOM GRID ── */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1px 1fr;
-      gap: 0;
-      max-width: 780px;
-      margin: 40px auto 0;
-      padding: 0 20px 54px;
+      max-width: 800px;
+      margin: 48px auto 0;
+      padding: 0 24px 60px;
     }
-    .divider-v {
-      background: rgba(255,255,255,.2);
-      width: 1px;
-    }
+    .divider-v { background: rgba(255,255,255,.18); }
 
-    .info-col { padding: 0 28px; }
+    .info-col { padding: 0 32px; }
     .info-col:first-child { padding-left: 0; }
     .info-col:last-child  { padding-right: 0; }
 
     .info-heading {
-      font-size: .78rem;
+      font-size: .75rem;
       font-weight: 700;
-      letter-spacing: .18em;
-      color: var(--off);
-      margin-bottom: 14px;
+      letter-spacing: .2em;
+      color: #a8c8f0;
+      margin-bottom: 16px;
     }
 
-    /* requirements */
     .req-list { list-style: none; }
     .req-list li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      font-size: .88rem;
-      color: var(--white);
-      padding: 4px 0;
+      gap: 9px;
+      font-size: .9rem;
+      padding: 5px 0;
       line-height: 1.4;
     }
     .req-list li::before {
       content: '▶';
-      font-size: .55rem;
-      color: var(--accent);
-      margin-top: 4px;
+      font-size: .52rem;
+      color: #00c8ff;
+      margin-top: 5px;
       flex-shrink: 0;
     }
 
-    /* contact */
     .contact-list { list-style: none; }
     .contact-list li {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: .88rem;
-      color: var(--white);
-      padding: 7px 0;
+      gap: 13px;
+      font-size: .9rem;
+      padding: 8px 0;
     }
     .contact-list li svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      opacity: .85;
+      width: 18px; height: 18px;
+      flex-shrink: 0; opacity: .8;
     }
-    .contact-list a {
-      color: var(--white);
-      text-decoration: none;
-    }
-    .contact-list a:hover { color: var(--accent); }
+    .contact-list a { color: #fff; text-decoration: none; }
+    .contact-list a:hover { color: #00c8ff; }
 
-    /* ── RESPONSIVE: stack on mobile ── */
-    @media (max-width: 560px) {
+    /* ── MOBILE ── */
+    @media (max-width: 580px) {
       .info-grid {
         grid-template-columns: 1fr;
         gap: 32px;
       }
       .divider-v { display: none; }
       .info-col, .info-col:first-child, .info-col:last-child { padding: 0; }
-
-      .role-card { margin: 20px 16px 0; }
-      .sw-icon { width: 46px; height: 46px; }
+      .role-card { margin: 20px 12px 0; }
+      .sw-icon { width: 50px; height: 50px; }
+      .sw-icon svg { width: 50px; height: 50px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- LOGO -->
   <header class="site-header">
-    <img src="logo.png" alt="AniBlend Studio" class="logo" />
-    <p class="studio-label">STUDIO</p>
+    <img src="logo.png" alt="AniBlend Studio" class="logo-img" width="300" height="90" />
   </header>
 
   <!-- HERO -->
@@ -286,55 +269,83 @@
   <div class="role-card">
     <p class="role-title">3D GENERALIST</p>
     <p class="role-sub">WHO CAN USE THESE SOFTWARES</p>
+
     <div class="software-list">
 
-      <!-- Maya -->
+      <!-- AUTODESK MAYA -->
       <div class="sw-item">
-        <div class="sw-icon sw-maya">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="50%" y="68%" text-anchor="middle" fill="white" font-size="22" font-weight="900" font-family="Arial">M</text>
+        <div class="sw-icon">
+          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <rect width="58" height="58" rx="13" fill="#00A6C8"/>
+            <!-- Maya M letterform -->
+            <text x="29" y="40" text-anchor="middle" fill="white" font-size="28" font-weight="900" font-family="Arial Black, Arial" dominant-baseline="auto">M</text>
           </svg>
         </div>
         <span class="sw-label">MAYA</span>
       </div>
 
-      <!-- ZBrush -->
+      <!-- ZBRUSH -->
       <div class="sw-item">
-        <div class="sw-icon sw-zbrush">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="50%" y="68%" text-anchor="middle" fill="white" font-size="16" font-weight="900" font-family="Arial">ZB</text>
+        <div class="sw-icon">
+          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <rect width="58" height="58" rx="13" fill="#1a1a2e"/>
+            <rect x="4" y="4" width="50" height="50" rx="10" fill="none" stroke="#e8a020" stroke-width="2"/>
+            <!-- Z -->
+            <text x="14" y="36" fill="#e8a020" font-size="22" font-weight="900" font-family="Arial Black, Arial">Z</text>
+            <!-- brush strokes -->
+            <line x1="34" y1="18" x2="50" y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="36" y1="24" x2="50" y2="24" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <line x1="34" y1="30" x2="50" y2="30" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <line x1="34" y1="36" x2="48" y2="36" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
         <span class="sw-label">ZBrush</span>
       </div>
 
-      <!-- Blender -->
+      <!-- BLENDER -->
       <div class="sw-item">
-        <div class="sw-icon sw-blender">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="18" r="8" fill="white" opacity=".15"/>
-            <circle cx="18" cy="18" r="5" fill="white" opacity=".9"/>
-            <rect x="11" y="17" width="14" height="2" fill="white"/>
+        <div class="sw-icon">
+          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <rect width="58" height="58" rx="13" fill="#EA7600"/>
+            <!-- Blender logo: outer ring + dot + line -->
+            <circle cx="29" cy="30" r="15" fill="none" stroke="white" stroke-width="4.5"/>
+            <circle cx="29" cy="30" r="6.5" fill="white"/>
+            <!-- highlight arc top-left -->
+            <path d="M18 20 A14 14 0 0 1 40 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- line going right (the Blender eye / dot detail) -->
+            <line x1="29" y1="13" x2="29" y2="8" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
           </svg>
         </div>
         <span class="sw-label">Blender</span>
       </div>
 
-      <!-- Substance Painter -->
+      <!-- SUBSTANCE PAINTER (Adobe) -->
       <div class="sw-item">
-        <div class="sw-icon sw-substance">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="50%" y="68%" text-anchor="middle" fill="white" font-size="20" font-weight="900" font-family="Arial">S</text>
+        <div class="sw-icon">
+          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <rect width="58" height="58" rx="13" fill="#222"/>
+            <!-- Substance gradient background -->
+            <rect x="4" y="4" width="50" height="50" rx="10" fill="url(#sbGrad)"/>
+            <defs>
+              <radialGradient id="sbGrad" cx="40%" cy="30%">
+                <stop offset="0%" stop-color="#e55c2f"/>
+                <stop offset="100%" stop-color="#9b1f0a"/>
+              </radialGradient>
+            </defs>
+            <!-- S letterform -->
+            <text x="29" y="40" text-anchor="middle" fill="white" font-size="26" font-weight="900" font-family="Arial Black, Arial">S</text>
           </svg>
         </div>
         <span class="sw-label">Substance Painter</span>
       </div>
 
-      <!-- Unreal Engine -->
+      <!-- UNREAL ENGINE -->
       <div class="sw-item">
-        <div class="sw-icon sw-unreal">
-          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="50%" y="68%" text-anchor="middle" fill="white" font-size="20" font-weight="900" font-family="Arial">U</text>
+        <div class="sw-icon">
+          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
+            <rect width="58" height="58" rx="13" fill="#111"/>
+            <!-- UE logo: U shape + triangle -->
+            <path d="M17 16 L17 35 Q17 44 29 44 Q41 44 41 35 L41 16 L35 16 L35 34 Q35 38 29 38 Q23 38 23 34 L23 16 Z" fill="white"/>
           </svg>
         </div>
         <span class="sw-label">Unreal Engine</span>
@@ -343,14 +354,9 @@
     </div>
   </div>
 
-  <!-- DESK IMAGE -->
-  <div class="desk-wrap">
-    <img src="hero-bg.png" alt="3D Studio Workstation" loading="eager" />
-  </div>
-
   <!-- APPLY BUTTON -->
   <div class="apply-wrap">
-    <a class="apply-btn" href="https://forms.gle/pXcjLx7VHzsruuYW7" target="_blank" rel="noopener">
+    <a class="apply-btn" href="https://forms.gle/pXcjLx7VHzsruuYW7" target="_blank" rel="noopener noreferrer">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
       </svg>
@@ -378,7 +384,6 @@
       <p class="info-heading">DROP YOUR CV :</p>
       <ul class="contact-list">
         <li>
-          <!-- envelope -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <polyline points="2,4 12,13 22,4"/>
@@ -386,7 +391,6 @@
           <a href="mailto:business@aniblend.com">business@aniblend.com</a>
         </li>
         <li>
-          <!-- phone -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.38 2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.09a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
