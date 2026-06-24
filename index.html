@@ -138,16 +138,19 @@
       width: 72px;
     }
     .sw-icon {
-      width: 58px;
-      height: 58px;
+      width: 64px;
+      height: 64px;
       border-radius: 14px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      background: #fff;
+      padding: 6px;
     }
-    .sw-icon svg { width: 58px; height: 58px; }
+    .sw-icon img,
+    .sw-icon svg { width: 100%; height: 100%; object-fit: contain; }
     .sw-label {
       font-size: .58rem;
       color: #a8c8f0;
@@ -274,29 +277,27 @@
 
       <!-- AUTODESK MAYA -->
       <div class="sw-item">
-        <div class="sw-icon">
-          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="58" height="58" rx="13" fill="#00A6C8"/>
-            <!-- Maya M letterform -->
-            <text x="29" y="40" text-anchor="middle" fill="white" font-size="28" font-weight="900" font-family="Arial Black, Arial" dominant-baseline="auto">M</text>
-          </svg>
+        <div class="sw-icon" style="background:#d6eef0; padding:4px;">
+          <img src="sw-maya.svg" alt="Autodesk Maya" />
         </div>
         <span class="sw-label">MAYA</span>
       </div>
 
-      <!-- ZBRUSH -->
+      <!-- ZBRUSH — stylized Z figure (black on white, matching real logo) -->
       <div class="sw-item">
-        <div class="sw-icon">
-          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="58" height="58" rx="13" fill="#1a1a2e"/>
-            <rect x="4" y="4" width="50" height="50" rx="10" fill="none" stroke="#e8a020" stroke-width="2"/>
-            <!-- Z -->
-            <text x="14" y="36" fill="#e8a020" font-size="22" font-weight="900" font-family="Arial Black, Arial">Z</text>
-            <!-- brush strokes -->
-            <line x1="34" y1="18" x2="50" y2="18" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="36" y1="24" x2="50" y2="24" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <line x1="34" y1="30" x2="50" y2="30" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <line x1="34" y1="36" x2="48" y2="36" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+        <div class="sw-icon" style="background:#fff; padding:4px;">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- ZBrush stylized Z-figure: head dot + sweeping body -->
+            <ellipse cx="62" cy="12" rx="10" ry="10" fill="#111"/>
+            <!-- Upper arm sweeping left -->
+            <path d="M68 20 Q80 28 70 38 Q55 50 38 55 Q20 60 15 72 Q10 84 20 90 Q30 96 45 88 Q60 80 68 68"
+                  fill="none" stroke="#111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Lower tail -->
+            <path d="M68 68 Q78 55 72 42"
+                  fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+            <!-- Cross stroke (the Z horizontal) -->
+            <path d="M22 38 Q44 32 72 42"
+                  fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>
           </svg>
         </div>
         <span class="sw-label">ZBrush</span>
@@ -304,36 +305,22 @@
 
       <!-- BLENDER -->
       <div class="sw-item">
-        <div class="sw-icon">
-          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="58" height="58" rx="13" fill="#EA7600"/>
-            <!-- Blender logo: outer ring + dot + line -->
-            <circle cx="29" cy="30" r="15" fill="none" stroke="white" stroke-width="4.5"/>
-            <circle cx="29" cy="30" r="6.5" fill="white"/>
-            <!-- highlight arc top-left -->
-            <path d="M18 20 A14 14 0 0 1 40 20" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <!-- line going right (the Blender eye / dot detail) -->
-            <line x1="29" y1="13" x2="29" y2="8" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
-          </svg>
+        <div class="sw-icon" style="background:#fff; padding:4px;">
+          <img src="sw-blender.svg" alt="Blender" />
         </div>
         <span class="sw-label">Blender</span>
       </div>
 
-      <!-- SUBSTANCE PAINTER (Adobe) -->
+      <!-- SUBSTANCE PAINTER — red hexagon with S cutout -->
       <div class="sw-item">
-        <div class="sw-icon">
-          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="58" height="58" rx="13" fill="#222"/>
-            <!-- Substance gradient background -->
-            <rect x="4" y="4" width="50" height="50" rx="10" fill="url(#sbGrad)"/>
-            <defs>
-              <radialGradient id="sbGrad" cx="40%" cy="30%">
-                <stop offset="0%" stop-color="#e55c2f"/>
-                <stop offset="100%" stop-color="#9b1f0a"/>
-              </radialGradient>
-            </defs>
-            <!-- S letterform -->
-            <text x="29" y="40" text-anchor="middle" fill="white" font-size="26" font-weight="900" font-family="Arial Black, Arial">S</text>
+        <div class="sw-icon" style="background:#fff; padding:2px;">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Red hexagon -->
+            <polygon points="50,4 93,27.5 93,72.5 50,96 7,72.5 7,27.5"
+                     fill="#CC1F1F"/>
+            <!-- White S-curve cutouts (2 diagonal slashes) -->
+            <path d="M30 36 Q50 28 68 36 Q74 40 68 48 Q50 56 32 64 Q26 68 32 76 Q50 84 70 76"
+                  fill="none" stroke="white" stroke-width="11" stroke-linecap="round"/>
           </svg>
         </div>
         <span class="sw-label">Substance Painter</span>
@@ -341,12 +328,8 @@
 
       <!-- UNREAL ENGINE -->
       <div class="sw-item">
-        <div class="sw-icon">
-          <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="58" height="58" rx="13" fill="#111"/>
-            <!-- UE logo: U shape + triangle -->
-            <path d="M17 16 L17 35 Q17 44 29 44 Q41 44 41 35 L41 16 L35 16 L35 34 Q35 38 29 38 Q23 38 23 34 L23 16 Z" fill="white"/>
-          </svg>
+        <div class="sw-icon" style="background:#fff; padding:4px;">
+          <img src="sw-unreal.svg" alt="Unreal Engine" />
         </div>
         <span class="sw-label">Unreal Engine</span>
       </div>
