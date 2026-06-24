@@ -72,12 +72,12 @@
       padding: 40px 20px 0;
     }
     .logo-img {
-      height: 90px;
+      height: 100px;
       width: auto;
-      max-width: 320px;
+      max-width: 340px;
       object-fit: contain;
-      /* logo has dark bg — blend so only white text shows on page bg */
-      mix-blend-mode: lighten;
+      /* screen blend removes dark bg, keeps white logo on any dark background */
+      mix-blend-mode: screen;
     }
 
     /* ── HERO ── */
